@@ -91,6 +91,10 @@ make check
 
 runs `cargo fmt --check`, `cargo clippy` with warnings as errors, and `cargo test`. The tests start the built adapter with a stand-in for `job` and the hook payloads in `tests/payloads/`. Those payloads are written by hand after the documented shape of a PreToolUse call; none was captured from a running session.
 
+Beside these tests the installed skill was run in a new Claude Code session against a job service that enforces limits. `make check` was rewritten by the hook, ran through the service in the background and came back with `[job] job N` as its first line and the session's ID as the Job's label. `ls` and `cargo --version` ran directly. `git push --no-verify` was refused by the command policy with its rule and what to do instead. That is one run on one host; the tests above are what `make check` repeats.
+
+A session that loaded an earlier form of the skill keeps the hook it loaded. Resuming or restarting the session loads the installed one.
+
 ## Licence
 
 Apache-2.0, see `LICENSE`.
