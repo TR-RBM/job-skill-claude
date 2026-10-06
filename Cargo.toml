@@ -1,0 +1,12 @@
+[package]
+name = "job-hook-claude"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+rust-version = "1.98"
+description = "Translates Claude Code's PreToolUse hook to the hook of the job program and back"
+
+[dependencies]
+serde_json = "1"
+
+[workspace]

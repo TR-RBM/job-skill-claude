@@ -1,0 +1,25 @@
+{
+  "protected_paths": ["/", "/*", "~", "$HOME", "${HOME}", "/home", "/usr", "/etc", "/var", "/boot", "/sys", "/proc", "/dev"],
+  "rules": {
+    "rm-protected": {
+      "forbids": "a recursive rm of the root directory, a home directory or a system directory",
+      "instead": "name the one file or directory you mean by its full path"
+    },
+    "empty-variable": {
+      "forbids": "a destructive command (rm, mv, cp -r, chmod -R, chown -R, find -delete, truncate, shred, dd of=) whose path holds a variable or substitution, which may be empty or unexpanded",
+      "instead": "expand the value yourself and write the full path, or write the variable as ${NAME:?} so that an empty value stops the command"
+    },
+    "find-root": {
+      "forbids": "find starting at /",
+      "instead": "find in the one directory you mean"
+    },
+    "no-verify": {
+      "forbids": "git with --no-verify, which skips the hooks of the repository",
+      "instead": "fix what the hook refused and commit again"
+    },
+    "pipe-to-shell": {
+      "forbids": "downloading with curl or wget and piping it into a shell",
+      "instead": "download to a file, read it, then run it on purpose"
+    }
+  }
+}

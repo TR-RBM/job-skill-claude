@@ -1,0 +1,11 @@
+{
+  "session_id": "3f6c1c1e-8a55-4a3e-9d0e-5d0b0c1f7a10",
+  "transcript_path": "/home/user/.claude/projects/-home-user-project/3f6c1c1e-8a55-4a3e-9d0e-5d0b0c1f7a10.jsonl",
+  "cwd": "/home/user/project",
+  "permission_mode": "default",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Read",
+  "tool_input": {
+    "file_path": "/home/user/project/Cargo.toml"
+  }
+}
